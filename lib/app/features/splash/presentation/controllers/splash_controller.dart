@@ -1,23 +1,10 @@
+import 'package:antarasa/app/core/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
+  Future<void> redirect() async {
+    await Future.delayed(const Duration(seconds: 2));
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+    Get.offNamed(Routes.INTRO);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

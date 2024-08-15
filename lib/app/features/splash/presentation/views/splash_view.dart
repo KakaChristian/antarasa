@@ -1,22 +1,34 @@
+import 'package:antarasa/app/features/splash/presentation/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+import '../../../../core/config/assets/app_images.dart';
 
-import '../controllers/splash_controller.dart';
-
-class SplashView extends GetView<SplashController> {
+// ignore: must_be_immutable
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  SplashController controller = SplashController();
+
+  @override
+  void initState() {
+    controller.redirect();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'SplashView is working',
-          style: TextStyle(fontSize: 20),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppImages.splashLogo),
+            scale: 2,
+          ),
         ),
       ),
     );
