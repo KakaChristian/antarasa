@@ -1,7 +1,7 @@
-import 'package:antarasa/app/features/splash/presentation/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/assets/app_images.dart';
+import '../../../core/config/assets/app_images.dart';
+import '../controllers/splash_controller.dart';
 
 // ignore: must_be_immutable
 class SplashView extends StatefulWidget {

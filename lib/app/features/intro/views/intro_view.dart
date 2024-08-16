@@ -1,7 +1,7 @@
-import 'package:antarasa/app/common/widgets/button/basic_app_button.dart';
-import 'package:antarasa/app/core/config/assets/app_images.dart';
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
-import 'package:antarasa/app/core/routes/app_pages.dart';
+import '../../../common/widgets/button/basic_app_button.dart';
+import '../../../core/config/assets/app_images.dart';
+import '../../../core/config/themes/app_colors.dart';
+import '../../../core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

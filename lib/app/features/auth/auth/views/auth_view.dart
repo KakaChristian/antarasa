@@ -1,7 +1,7 @@
-import 'package:antarasa/app/core/config/assets/app_images.dart';
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
-import 'package:antarasa/app/features/auth/login/presentation/views/login_view.dart';
-import 'package:antarasa/app/features/auth/signup/presentation/views/signup_view.dart';
+import '../../../../core/config/assets/app_images.dart';
+import '../../../../core/config/themes/app_colors.dart';
+import '../../login/views/login_view.dart';
+import '../../signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

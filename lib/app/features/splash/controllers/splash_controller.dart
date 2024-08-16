@@ -1,4 +1,4 @@
-import 'package:antarasa/app/core/routes/app_pages.dart';
+import '../../../core/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
