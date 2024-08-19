@@ -1,8 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
+  var currentTab = 0.obs;
+  var pageController = PageController().obs;
 
-  final count = 0.obs;
+  void showSignUp() {
+    currentTab.value = 0;
+    pageController.value.jumpToPage(0);
+  }
 
-  void increment() => count.value++;
+  void showLogin() {
+    currentTab.value = 1;
+    pageController.value.jumpToPage(1);
+  }
 }

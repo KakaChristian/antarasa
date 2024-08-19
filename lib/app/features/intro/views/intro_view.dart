@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../core/config/assets/app_images.dart';
 import '../../../core/config/themes/app_colors.dart';
 import '../../../core/routes/app_pages.dart';
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
 import '../controllers/intro_controller.dart';
 
 class IntroView extends GetView<IntroController> {
