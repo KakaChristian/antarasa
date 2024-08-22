@@ -9,6 +9,10 @@ abstract class Routes {
   static const SIGNUP = _Paths.SIGNUP;
   static const AUTH = _Paths.AUTH;
   static const RECOVERY_PASSWORD = _Paths.RECOVERY_PASSWORD;
+  static const HOME = _Paths.HOME;
+  static const PROFILE = _Paths.PROFILE;
+  static const NAVIGATION = _Paths.NAVIGATION;
+  static const RECEIPT = _Paths.RECEIPT;
 }
 
 abstract class _Paths {
@@ -19,4 +23,8 @@ abstract class _Paths {
   static const SIGNUP = '/signup';
   static const AUTH = '/auth';
   static const RECOVERY_PASSWORD = '/recovery-password';
+  static const HOME = '/home';
+  static const PROFILE = '/profile';
+  static const NAVIGATION = '/navigation';
+  static const RECEIPT = '/receipt';
 }

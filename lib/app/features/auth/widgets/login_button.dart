@@ -1,5 +1,6 @@
-import '../../../core/config/themes/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/config/themes/app_colors.dart';
 
 class AuthButton extends StatelessWidget {
   final String text;

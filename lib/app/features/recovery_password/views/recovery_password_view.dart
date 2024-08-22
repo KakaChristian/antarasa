@@ -1,6 +1,6 @@
-import 'package:antarasa/app/common/widgets/button/basic_app_button.dart';
-import 'package:antarasa/app/common/widgets/textfield/basic_app_textfield.dart';
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
+import '../../../common/widgets/button/basic_app_button.dart';
+import '../../../common/widgets/textfield/basic_app_textfield.dart';
+import '../../../core/config/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

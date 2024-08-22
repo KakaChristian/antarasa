@@ -6,8 +6,16 @@ import '../../features/auth/login/bindings/login_binding.dart';
 import '../../features/auth/login/views/login_view.dart';
 import '../../features/auth/signup/bindings/signup_binding.dart';
 import '../../features/auth/signup/views/signup_view.dart';
+import '../../features/home/bindings/home_binding.dart';
+import '../../features/home/views/home_view.dart';
 import '../../features/intro/bindings/intro_binding.dart';
 import '../../features/intro/views/intro_view.dart';
+import '../../features/navigation/bindings/navigation_binding.dart';
+import '../../features/navigation/views/navigation_view.dart';
+import '../../features/profile/bindings/profile_binding.dart';
+import '../../features/profile/views/profile_view.dart';
+import '../../features/receipt/bindings/receipt_binding.dart';
+import '../../features/receipt/views/receipt_view.dart';
 import '../../features/recovery_password/bindings/recovery_password_binding.dart';
 import '../../features/recovery_password/views/recovery_password_view.dart';
 import '../../features/splash/bindings/splash_binding.dart';
@@ -50,6 +58,26 @@ class AppPages {
       name: _Paths.RECOVERY_PASSWORD,
       page: () => const RecoveryPasswordView(),
       binding: RecoveryPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME,
+      page: () => const HomeView(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.NAVIGATION,
+      page: () => const NavigationView(),
+      binding: NavigationBinding(),
+    ),
+    GetPage(
+      name: _Paths.RECEIPT,
+      page: () => const ReceiptView(),
+      binding: ReceiptBinding(),
     ),
   ];
 }

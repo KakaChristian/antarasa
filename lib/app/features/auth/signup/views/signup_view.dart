@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../../common/widgets/textfield/basic_app_textfield.dart';
 import '../../../../core/config/assets/app_vectors.dart';
 import '../../../../core/config/themes/app_colors.dart';
+import '../../../../core/routes/app_pages.dart';
 import '../../widgets/login_button.dart';
 import '../../widgets/textfield_name.dart';
 import '../controllers/signup_controller.dart';
@@ -38,14 +39,18 @@ class SignupView extends GetView<SignupController> {
             ),
             const SizedBox(height: 15),
             AuthButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offNamed(Routes.NAVIGATION);
+              },
               text: 'Buat Akun',
               contentAxis: MainAxisAlignment.center,
             ),
             const SizedBox(height: 15),
             AuthButton(
               buttonBackgroundColor: const Color(0xfff4f4f4),
-              onPressed: () {},
+              onPressed: () {
+                Get.offNamed(Routes.NAVIGATION);
+              },
               text: 'Daftar Dengan Google',
               style: const TextStyle(color: AppColors.primaryColor),
               contentAxis: MainAxisAlignment.spaceBetween,

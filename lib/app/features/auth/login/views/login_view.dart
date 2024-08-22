@@ -1,14 +1,13 @@
-import 'package:antarasa/app/core/routes/app_pages.dart';
-
-import '../../../../common/widgets/textfield/basic_app_textfield.dart';
-import '../../../../core/config/assets/app_vectors.dart';
-import '../../../../core/config/themes/app_colors.dart';
-import '../../widgets/login_button.dart';
-import '../../widgets/textfield_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../common/widgets/textfield/basic_app_textfield.dart';
+import '../../../../core/config/assets/app_vectors.dart';
+import '../../../../core/config/themes/app_colors.dart';
+import '../../../../core/routes/app_pages.dart';
+import '../../widgets/login_button.dart';
+import '../../widgets/textfield_name.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
