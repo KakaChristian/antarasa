@@ -8,6 +8,8 @@ import '../../features/auth/signup/bindings/signup_binding.dart';
 import '../../features/auth/signup/views/signup_view.dart';
 import '../../features/intro/bindings/intro_binding.dart';
 import '../../features/intro/views/intro_view.dart';
+import '../../features/recovery_password/bindings/recovery_password_binding.dart';
+import '../../features/recovery_password/views/recovery_password_view.dart';
 import '../../features/splash/bindings/splash_binding.dart';
 import '../../features/splash/views/splash_view.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.AUTH,
       page: () => const AuthView(),
       binding: AuthBinding(),
+    ),
+    GetPage(
+      name: _Paths.RECOVERY_PASSWORD,
+      page: () => const RecoveryPasswordView(),
+      binding: RecoveryPasswordBinding(),
     ),
   ];
 }

@@ -1,3 +1,5 @@
+import 'package:antarasa/app/core/routes/app_pages.dart';
+
 import '../../../../common/widgets/textfield/basic_app_textfield.dart';
 import '../../../../core/config/assets/app_vectors.dart';
 import '../../../../core/config/themes/app_colors.dart';
@@ -30,7 +32,19 @@ class LoginView extends GetView<LoginController> {
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
               child: BasicAppTextfield(),
             ),
-            const SizedBox(height: 55),
+            InkWell(
+              onTap: () {
+                Get.toNamed(Routes.RECOVERY_PASSWORD);
+              },
+              child: Ink(
+                padding: const EdgeInsets.only(left: 180, top: 10),
+                child: const Text(
+                  'Recovery Password',
+                  style: TextStyle(color: AppColors.primaryColor),
+                ),
+              ),
+            ),
+            const SizedBox(height: 45),
             AuthButton(
               onPressed: () {},
               text: 'Masuk',
