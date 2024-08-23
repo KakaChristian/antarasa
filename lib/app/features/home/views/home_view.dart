@@ -1,3 +1,4 @@
+import 'package:antarasa/app/core/config/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,20 +10,25 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(AppImages.antarasaBg),
-              ),
-            ),
-          ),
-        ],
+    return Container(
+      constraints: const BoxConstraints.expand(),
+      height: double.infinity,
+      decoration: const BoxDecoration(
+        color: AppColors.lightBackgroundColor,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(AppImages.antarasaBg),
+        ),
       ),
-      
+      child: const SafeArea(
+        child: Scaffold(
+          
+          backgroundColor: Colors.transparent,
+          body: Column(
+            children: [SearchBar()],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'app/core/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
+  
       debugShowCheckedModeBanner: false,
       title: "Antarasa",
       theme: AppTheme.lightTheme,
