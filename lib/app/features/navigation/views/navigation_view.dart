@@ -47,7 +47,7 @@ class _NavigationViewState extends State<NavigationView> {
       ),
       bottomNavigationBar: Obx(
         () => CurvedNavigationBar(
-          color: AppColors.lightBackgroundColor,
+          color: AppColors.white,
           animationCurve: Curves.fastLinearToSlowEaseIn,
           backgroundColor: AppColors.primaryColor,
           animationDuration: const Duration(milliseconds: 600),

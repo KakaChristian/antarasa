@@ -48,5 +48,15 @@ class AppTheme {
         ),
       ),
     ),
+    searchBarTheme: const SearchBarThemeData(
+      backgroundColor: WidgetStatePropertyAll(AppColors.white),
+      shadowColor: WidgetStatePropertyAll(AppColors.black),
+      padding: WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 20),
+      ),
+      hintStyle: WidgetStatePropertyAll(
+        TextStyle(fontSize: 18),
+      ),
+    ),
   );
 }
