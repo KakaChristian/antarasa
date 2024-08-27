@@ -53,7 +53,10 @@ class _NavigationViewState extends State<NavigationView> {
           animationDuration: const Duration(milliseconds: 600),
           items: List.generate(
             3,
-            (index) => navigationBarItem(index, controller.currentIndex.value),
+            (index) => NavigationBarItem(
+              index: index,
+              currentIndex: controller.currentIndex.value,
+            ),
           ),
           onTap: (index) {
             controller.changePage(index);
