@@ -1,4 +1,4 @@
-import 'package:antarasa/app/core/config/assets/app_images.dart';
+import '../../../core/config/assets/app_images.dart';
 
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../common/widgets/textfield/basic_app_textfield.dart';

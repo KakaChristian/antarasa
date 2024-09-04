@@ -1,7 +1,8 @@
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
-import 'package:antarasa/app/features/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../core/config/themes/app_colors.dart';
+import '../controllers/home_controller.dart';
 
 class PageIndicator extends StatelessWidget {
   final int dotCount;

@@ -1,6 +1,7 @@
-import 'package:antarasa/app/core/config/assets/app_images.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../core/config/assets/app_images.dart';
 
 class HomeController extends GetxController {
   late PageController pageController = PageController();

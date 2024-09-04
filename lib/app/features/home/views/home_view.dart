@@ -1,8 +1,8 @@
-import 'package:antarasa/app/common/widgets/button/basic_app_button.dart';
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
-import 'package:antarasa/app/features/home/widgets/food_card.dart';
-import 'package:antarasa/app/features/home/widgets/home_search_bar.dart';
-import 'package:antarasa/app/features/home/widgets/page_indicator.dart';
+import '../../../common/widgets/button/basic_app_button.dart';
+import '../../../core/config/themes/app_colors.dart';
+import '../widgets/food_card.dart';
+import '../widgets/home_search_bar.dart';
+import '../widgets/page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
