@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../../common/widgets/textfield/basic_app_textfield.dart';
 import '../../../../core/config/assets/app_vectors.dart';
 import '../../../../core/config/themes/app_colors.dart';
-import '../../../../core/routes/app_pages.dart';
+
 import '../../widgets/login_button.dart';
 import '../../widgets/textfield_name.dart';
 import '../controllers/signup_controller.dart';
@@ -20,27 +21,48 @@ class SignupView extends GetView<SignupController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            textfieldName(name: 'Nama Lengkap'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
-              child: BasicAppTextfield(),
+            textfieldName(
+              name: 'Nama Lengkap',
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 2),
+
+              // FullName Textfield
+              child: BasicAppTextfield(
+                controller: controller.fullNameController,
+              ),
             ),
             const SizedBox(height: 15),
             textfieldName(name: 'Alamat Email'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
-              child: BasicAppTextfield(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 2),
+
+              // Email Textfield
+              child: BasicAppTextfield(
+                controller: controller.emailController,
+              ),
             ),
             const SizedBox(height: 15),
             textfieldName(name: 'Password'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
-              child: BasicAppTextfield(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 2),
+
+              // Password Textfield
+              child: Obx(() => BasicAppTextfield(
+                    controller: controller.passwordController,
+                    icon: Icon(
+                      controller.isPasswordVisible.value
+                          ? MdiIcons.eyeOffOutline
+                          : MdiIcons.eyeOutline,
+                    ),
+                    obscureText: controller.isPasswordVisible.value,
+                    onPressedIcon: controller.togglePasswordVisibility,
+                  )),
             ),
             const SizedBox(height: 15),
             AuthButton(
               onPressed: () {
-                Get.offNamed(Routes.NAVIGATION);
+                controller.signup();
               },
               text: 'Buat Akun',
               contentAxis: MainAxisAlignment.center,
@@ -48,9 +70,7 @@ class SignupView extends GetView<SignupController> {
             const SizedBox(height: 15),
             AuthButton(
               buttonBackgroundColor: const Color(0xfff4f4f4),
-              onPressed: () {
-                Get.offNamed(Routes.NAVIGATION);
-              },
+              onPressed: () {},
               text: 'Daftar Dengan Google',
               style: const TextStyle(color: AppColors.primaryColor),
               contentAxis: MainAxisAlignment.spaceBetween,

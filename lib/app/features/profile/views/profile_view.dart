@@ -151,7 +151,9 @@ class ProfileView extends GetView<ProfileController> {
 
               // Logout Button
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.signOut();
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.red,
                   elevation: 0,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../../common/widgets/textfield/basic_app_textfield.dart';
 import '../../../../core/config/assets/app_vectors.dart';
@@ -20,16 +21,27 @@ class LoginView extends GetView<LoginController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            textfieldName(name: 'Email / Nama'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
-              child: BasicAppTextfield(),
+            textfieldName(name: 'Email'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 2),
+              child: BasicAppTextfield(
+                controller: controller.emailController,
+              ),
             ),
             const SizedBox(height: 15),
             textfieldName(name: 'Password'),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 2),
-              child: BasicAppTextfield(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 2),
+              child: Obx(() => BasicAppTextfield(
+                    controller: controller.passwordController,
+                    icon: Icon(
+                      controller.isPasswordVisible.value
+                          ? MdiIcons.eyeOffOutline
+                          : MdiIcons.eyeOutline,
+                    ),
+                    obscureText: controller.isPasswordVisible.value,
+                    onPressedIcon: controller.togglePasswordVisibility,
+                  )),
             ),
             InkWell(
               onTap: () {
@@ -45,7 +57,9 @@ class LoginView extends GetView<LoginController> {
             ),
             const SizedBox(height: 45),
             AuthButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.login();
+              },
               text: 'Masuk',
               contentAxis: MainAxisAlignment.center,
             ),

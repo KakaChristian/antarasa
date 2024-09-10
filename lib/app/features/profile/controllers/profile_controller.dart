@@ -1,7 +1,12 @@
+import 'package:antarasa/app/core/routes/app_pages.dart';
+import 'package:antarasa/app/core/utils/constant/constant.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  final count = 0.obs;
-
-  void increment() => count.value++;
+  Future<void> signOut() async {
+    await supabase.auth.signOut();
+    if (!isClosed) {
+      return Get.offNamed(Routes.AUTH);
+    }
+  }
 }

@@ -52,8 +52,9 @@ class RecoveryPasswordView extends GetView<RecoveryPasswordController> {
                     ),
                   ),
                   const SizedBox(height: 80),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25, vertical: 10),
                     child: BasicAppTextfield(),
                   ),
                   Padding(

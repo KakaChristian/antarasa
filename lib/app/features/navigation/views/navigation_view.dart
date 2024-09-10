@@ -1,3 +1,5 @@
+import 'package:antarasa/app/features/home/controllers/home_controller.dart';
+import 'package:antarasa/app/features/profile/controllers/profile_controller.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,6 +29,9 @@ class _NavigationViewState extends State<NavigationView> {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
+    Get.put(ProfileController());
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: PageView(

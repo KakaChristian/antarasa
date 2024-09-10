@@ -14,8 +14,6 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(HomeController());
-
     return Container(
       decoration: const BoxDecoration(
         color: AppColors.lightBackgroundColor,

@@ -10,7 +10,8 @@ class BasicAppTextfield extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final TextEditingController? controller;
 
-  const BasicAppTextfield({
+   // ignore: prefer_const_constructors_in_immutables
+   BasicAppTextfield({
     super.key,
     this.hintText,
     this.icon,
