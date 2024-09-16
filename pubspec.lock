@@ -283,6 +283,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  flutter_profile_picture:
+    dependency: "direct main"
+    description:
+      name: flutter_profile_picture
+      sha256: "067caecef0d7162d3858eaca3c5859cbbb21b3e5704c2bc5b96b50ffe267f45d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -794,6 +802,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  string_capitalize:
+    dependency: "direct main"
+    description:
+      name: string_capitalize
+      sha256: f98952f8bebd5ef15ef414d29ddd30d9157ad318b54ce9695248a52b0926a64b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.10"
   string_scanner:
     dependency: transitive
     description:

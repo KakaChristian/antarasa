@@ -3,7 +3,6 @@ import 'package:antarasa/app/core/routes/app_pages.dart';
 import 'package:antarasa/app/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignupController extends GetxController {
   var isPasswordVisible = true.obs;
@@ -20,8 +19,8 @@ class SignupController extends GetxController {
     if (fullNameController.text.trim().isEmpty &&
         emailController.text.trim().isEmpty &&
         passwordController.text.trim().isEmpty) {
-      BasicAppSnackbar()
-          .show(SnackbarType.warning, message: 'Nama, Alamat Email dan Password Wajib Diisi');
+      BasicAppSnackbar().show(SnackbarType.warning,
+          message: 'Nama, Alamat Email dan Password Wajib Diisi');
       return;
     }
 
@@ -41,7 +40,7 @@ class SignupController extends GetxController {
       BasicAppSnackbar()
           .show(SnackbarType.warning, message: 'Password Wajib Diisi');
       return;
-    } else if (fullNameController.text.trim().length != 6) {
+    } else if (passwordController.text.trim().length < 6) {
       BasicAppSnackbar().show(SnackbarType.warning,
           message: 'Password Wajib Terdiri dari 6 Karakter');
       return;
@@ -51,21 +50,34 @@ class SignupController extends GetxController {
       final response = await supabase.auth.signUp(
         password: passwordController.text.trim(),
         email: emailController.text.trim(),
-        data: {'fullname': fullNameController.text.trim()},
+        data: {'full_name': fullNameController.text.trim()},
       );
 
       final user = response.user;
       final session = response.session;
 
+      String extractFirstName(String fullName) {
+        final nameParts = fullName.split(' ');
+        return nameParts.isNotEmpty ? nameParts.first : '';
+      }
+
       if (user != null && session != null) {
+        await supabase.from('users').insert({
+          'user_id': user.id,
+          'email': emailController.text.trim(),
+          'full_name': fullNameController.text.trim(),
+          'user_name': extractFirstName(fullNameController.text.trim()),
+        });
+
+        BasicAppSnackbar()
+            .show(SnackbarType.success, message: 'Berhasil Membuat Akun');
         Get.offNamed(Routes.NAVIGATION);
       } else {
         BasicAppSnackbar()
             .show(SnackbarType.error, message: 'Gagal Membuat Akun');
       }
-    } on AuthException catch (_) {
-      BasicAppSnackbar()
-          .show(SnackbarType.error, message: 'Gagal Membuat Akun');
+    } catch (e) {
+      BasicAppSnackbar().show(SnackbarType.error, message: 'Terjadi Kesalahan');
     }
   }
 }

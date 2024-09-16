@@ -6,7 +6,7 @@ abstract class Constants {
     'SUPABASE_URL',
     defaultValue: 'https://pgjrynqgvnpjfnsvknzh.supabase.co',
   );
-    
+
   static const String supabaseAnnonKey = String.fromEnvironment(
     'SUPABASE_ANNON_KEY',
     defaultValue:
@@ -16,5 +16,3 @@ abstract class Constants {
 
 // [Supabase Client]
 final supabase = Supabase.instance.client;
-
-

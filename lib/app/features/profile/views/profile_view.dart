@@ -4,6 +4,8 @@ import 'package:antarasa/app/core/config/themes/app_colors.dart';
 import 'package:antarasa/app/features/profile/widgets/profile_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:string_capitalize/string_capitalize.dart';
+import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -49,45 +51,53 @@ class ProfileView extends GetView<ProfileController> {
                       const SizedBox(width: 25),
 
                       // Profile Picture
-                      const CircleAvatar(),
+                      ProfilePicture(
+                        name: controller.fullName.value.capitalizeEach(),
+                        radius: 21,
+                        fontsize: 11,
+                        tooltip: true,
+                      ),
                       const SizedBox(width: 10),
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
 
                         // Profile Name
                         children: [
                           Text(
-                            'Habil Gwantenk',
-                            style: TextStyle(
+                            controller.userName.value.capitalizeEach(),
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
                           ),
                           Text(
-                            'HabilRheeHebat@gmail.com',
-                            style: TextStyle(
+                            controller.email.value,
+                            style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(width: 50),
+                      const Spacer(),
 
                       // Notification
-                      Container(
-                        height: 45,
-                        width: 45,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppColors.grey.withOpacity(.2),
-                          border: Border.all(
-                            color: AppColors.black.withOpacity(0.6),
-                            width: 0.1,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.grey.withOpacity(.2),
+                            border: Border.all(
+                              color: AppColors.black.withOpacity(0.6),
+                              width: 0.1,
+                            ),
                           ),
+                          child: const Icon(Icons.notifications_outlined),
                         ),
-                        child: const Icon(Icons.notifications_outlined),
                       ),
                     ],
                   ),
