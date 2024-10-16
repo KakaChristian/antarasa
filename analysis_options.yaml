@@ -1,6 +1,7 @@
 analyzer:
   errors:
     constant_identifier_names: ignore
+    library_private_types_in_public_api: ignore
     no_leading_underscores_for_local_identifiers: ignore
 include: package:flutter_lints/flutter.yaml
 linter:

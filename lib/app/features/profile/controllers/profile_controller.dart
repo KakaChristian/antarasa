@@ -1,6 +1,7 @@
-import 'package:antarasa/app/core/routes/app_pages.dart';
-import 'package:antarasa/app/core/utils/constant/constant.dart';
 import 'package:get/get.dart';
+
+import '../../../core/routes/app_pages.dart';
+import '../../../core/utils/constant/constant.dart';
 
 class ProfileController extends GetxController {
   var userName = ''.obs;

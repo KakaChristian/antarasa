@@ -6,7 +6,6 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import '../../../../common/widgets/textfield/basic_app_textfield.dart';
 import '../../../../core/config/assets/app_vectors.dart';
 import '../../../../core/config/themes/app_colors.dart';
-
 import '../../widgets/login_button.dart';
 import '../../widgets/textfield_name.dart';
 import '../controllers/signup_controller.dart';

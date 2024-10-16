@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-import '../controllers/receipt_controller.dart';
+import '../controllers/order_controller.dart';
 
-class ReceiptView extends GetView<ReceiptController> {
-  const ReceiptView({super.key});
+class OrderView extends GetView<OrderController> {
+  const OrderView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ReceiptView'),
+        title: const Text('OrderView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'ReceiptView is working',
+          'OrderView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

@@ -3,9 +3,9 @@ import 'package:antarasa/app/core/config/assets/app_images.dart';
 import 'package:antarasa/app/core/config/themes/app_colors.dart';
 import 'package:antarasa/app/features/profile/widgets/profile_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:get/get.dart';
 import 'package:string_capitalize/string_capitalize.dart';
-import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -110,7 +110,7 @@ class ProfileView extends GetView<ProfileController> {
                 ),
                 child: Container(
                   width: double.infinity,
-                  height: 250,
+                  height: 310,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: AppColors.white,
@@ -153,11 +153,18 @@ class ProfileView extends GetView<ProfileController> {
                         text: 'Saran',
                         leadingIcon: const Icon(Icons.feedback_rounded),
                       ),
+
+                      //  Order History
+                      ProfileButton(
+                        ontap: () {},
+                        text: 'Riwayat Pesanan',
+                        leadingIcon: const Icon(Icons.history),
+                      ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 70),
 
               // Logout Button
               ElevatedButton(

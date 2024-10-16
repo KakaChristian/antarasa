@@ -24,11 +24,28 @@ class HomeController extends GetxController {
         currentIndex.value = newIndex;
       }
     });
+    // Menyimpan daftar menu awal ke dalam filteredMenuList
+    filteredMenuList.addAll(menuList);
   }
 
   @override
   void onClose() {
     pageController.dispose();
     super.onClose();
+  }
+
+  // Daftar menu yang akan ditampilkan
+  var menuList = <String>['Restoran 1', 'Restoran 2', 'Restoran 3'].obs;
+  List<String> get suggestions => menuList.toList();
+  var filteredMenuList = <String>[].obs;
+
+  void updateSearchResults(String query) {
+    if (query.isEmpty) {
+      filteredMenuList.assignAll(menuList);
+    } else {
+      filteredMenuList.assignAll(menuList.where(
+        (menu) => menu.toLowerCase().contains(query.toLowerCase()),
+      ));
+    }
   }
 }

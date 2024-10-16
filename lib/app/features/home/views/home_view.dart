@@ -1,16 +1,22 @@
-import '../../../common/widgets/button/basic_app_button.dart';
-import '../../../core/config/themes/app_colors.dart';
-import '../widgets/food_card.dart';
-import '../widgets/home_search_bar.dart';
-import '../widgets/page_indicator.dart';
+import 'package:antarasa/app/common/widgets/searchbar/basic_app_search_bar.dart';
+import 'package:antarasa/app/core/routes/app_pages.dart';
+import 'package:antarasa/app/features/menu_list/controllers/menu_list_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../core/config/assets/app_images.dart';
+import '../../../core/config/themes/app_colors.dart';
 import '../controllers/home_controller.dart';
+import '../widgets/food_card.dart';
+import '../widgets/page_indicator.dart';
+import '../../navigation/controllers/navigation_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+  HomeView({super.key});
+
+  final NavigationController navController = Get.find<NavigationController>();
+  final MenuListController menuListController = Get.find<MenuListController>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +34,9 @@ class HomeView extends GetView<HomeController> {
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
+              ListView(
                 children: [
-                  const SizedBox(height: 70),
+                  SizedBox(height: Get.height * 0.1),
                   SizedBox(
                     height: 150,
                     child: PageView.builder(
@@ -44,7 +49,7 @@ class HomeView extends GetView<HomeController> {
                             onTap: () {},
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(40),
                                 image: DecorationImage(
                                   image: AssetImage(controller.images[index]),
                                   fit: BoxFit.cover,
@@ -56,9 +61,9 @@ class HomeView extends GetView<HomeController> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: Get.height * 0.02),
                   PageIndicator(dotCount: controller.images.length),
-                  const SizedBox(height: 20),
+                  SizedBox(height: Get.height * 0.04),
                   Padding(
                     padding: const EdgeInsets.only(right: 200, left: 25),
                     child: BasicAppButton(
@@ -69,24 +74,14 @@ class HomeView extends GetView<HomeController> {
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 200, left: 25),
-                    child: BasicAppButton(
-                      height: 40,
-                      onPressed: () {},
-                      title: 'Pesanan',
-                      backgroundColor: AppColors.lightGreen,
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: Get.height * 0.08),
                   Stack(
                     children: [
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Padding(
-                            padding: EdgeInsets.only(right: 130),
+                            padding: EdgeInsets.only(left: 20),
                             child: Text(
                               'Menu',
                               style: TextStyle(
@@ -112,7 +107,11 @@ class HomeView extends GetView<HomeController> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 15),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(
+                              Routes.MENU_LIST,
+                            );
+                          },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -131,10 +130,11 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: Get.height * 0.02),
                   SizedBox(
                     height: 200,
                     child: ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemCount: 4,
                       itemBuilder: (context, index) => const Padding(
@@ -145,7 +145,37 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ],
               ),
-              const HomeSearchBar(),
+              BasicAppSearchBar(
+                width: 300,
+                onQueryChanged: (query) {},
+                suggestions: menuListController.suggestions,
+                searchResultsBuilder: (context, transition) {
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Material(
+                      color: Colors.white,
+                      elevation: 4.0,
+                      child: Obx(() {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: menuListController.filteredMenuList.length,
+                          itemBuilder: (context, index) {
+                            final menu =
+                                menuListController.filteredMenuList[index];
+                            return ListTile(
+                              title: Text(menu),
+                              onTap: () {
+                                // Aksi saat item dipilih
+                              },
+                            );
+                          },
+                        );
+                      }),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),

@@ -1,6 +1,6 @@
-import 'package:antarasa/app/common/widgets/snackbar/basic_app_snackbar.dart';
-import 'package:antarasa/app/core/routes/app_pages.dart';
-import 'package:antarasa/app/core/utils/constant/constant.dart';
+import '../../../../common/widgets/snackbar/basic_app_snackbar.dart';
+import '../../../../core/routes/app_pages.dart';
+import '../../../../core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

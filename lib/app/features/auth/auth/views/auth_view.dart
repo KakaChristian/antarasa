@@ -1,5 +1,5 @@
-import 'package:antarasa/app/features/auth/login/controllers/login_controller.dart';
-import 'package:antarasa/app/features/auth/signup/controllers/signup_controller.dart';
+import '../../login/controllers/login_controller.dart';
+import '../../signup/controllers/signup_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -145,8 +145,9 @@ class AuthView extends GetView<AuthController> {
             child: Column(
               children: [
                 const Spacer(),
-                SizedBox(
-                  height: 500,
+                Container(
+                  color: AppColors.lightBackgroundColor,
+                  height: 480,
                   child: Obx(() {
                     return PageView(
                       controller: controller.pageController.value,

@@ -1,15 +1,18 @@
-import 'package:antarasa/app/features/home/controllers/home_controller.dart';
-import 'package:antarasa/app/features/profile/controllers/profile_controller.dart';
+// import 'package:antarasa/app/core/config/assets/app_vectors.dart';
+import 'package:antarasa/app/features/menu_list/controllers/menu_list_controller.dart';
+import 'package:antarasa/app/features/navigation/widgets/navigation_bar_item.dart';
+import 'package:antarasa/app/features/order/views/order_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../../home/controllers/home_controller.dart';
+import '../../profile/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../core/config/themes/app_colors.dart';
 import '../../home/views/home_view.dart';
 import '../../profile/views/profile_view.dart';
-import '../../receipt/views/receipt_view.dart';
 import '../controllers/navigation_controller.dart';
-import '../widgets/navigation_bar_item.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
@@ -21,6 +24,12 @@ class NavigationView extends StatefulWidget {
 class _NavigationViewState extends State<NavigationView> {
   final controller = Get.put(NavigationController());
 
+  final List<IconData> iconList = [
+    MdiIcons.homeOutline,
+    MdiIcons.food,
+    MdiIcons.accountOutline
+  ];
+
   @override
   void dispose() {
     controller.pageController.dispose();
@@ -30,6 +39,7 @@ class _NavigationViewState extends State<NavigationView> {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
+    Get.put(MenuListController());
     Get.put(ProfileController());
 
     return Scaffold(
@@ -39,15 +49,15 @@ class _NavigationViewState extends State<NavigationView> {
         onPageChanged: (index) {
           controller.selectedIndex = index;
         },
-        children: const [
+        children: [
           // Home Page
           HomeView(),
 
-          // Receipt Page
-          ReceiptView(),
+          // Order Page
+          const OrderView(),
 
           // Profile Page
-          ProfileView(),
+          const ProfileView(),
         ],
       ),
       bottomNavigationBar: Obx(

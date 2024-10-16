@@ -1,8 +1,9 @@
-import 'package:antarasa/app/common/widgets/snackbar/basic_app_snackbar.dart';
-import 'package:antarasa/app/core/routes/app_pages.dart';
-import 'package:antarasa/app/core/utils/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../common/widgets/snackbar/basic_app_snackbar.dart';
+import '../../../../core/routes/app_pages.dart';
+import '../../../../core/utils/constant/constant.dart';
 
 class LoginController extends GetxController {
   var isPasswordVisible = true.obs;
@@ -51,11 +52,13 @@ class LoginController extends GetxController {
 
       if (user != null && session != null) {
         Get.offNamed(Routes.NAVIGATION);
+        BasicAppSnackbar()
+            .show(SnackbarType.success, message: 'Login Berhasil');
       } else {
         BasicAppSnackbar()
             .show(SnackbarType.error, message: 'Email Atau Password Salah');
       }
-    } catch (_) {
+    } catch (e) {
       BasicAppSnackbar()
           .show(SnackbarType.error, message: 'Email Atau Password Salah');
     }

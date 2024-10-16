@@ -1,12 +1,10 @@
-import '../../../core/config/assets/app_images.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../common/widgets/textfield/basic_app_textfield.dart';
+import '../../../core/config/assets/app_images.dart';
 import '../../../core/config/themes/app_colors.dart';
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
 import '../controllers/recovery_password_controller.dart';
 
 class RecoveryPasswordView extends GetView<RecoveryPasswordController> {

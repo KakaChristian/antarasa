@@ -10,12 +10,14 @@ import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/views/home_view.dart';
 import '../../features/intro/bindings/intro_binding.dart';
 import '../../features/intro/views/intro_view.dart';
+import '../../features/menu_list/bindings/menu_list_binding.dart';
+import '../../features/menu_list/views/menu_list_view.dart';
 import '../../features/navigation/bindings/navigation_binding.dart';
 import '../../features/navigation/views/navigation_view.dart';
+import '../../features/order/bindings/order_binding.dart';
+import '../../features/order/views/order_view.dart';
 import '../../features/profile/bindings/profile_binding.dart';
 import '../../features/profile/views/profile_view.dart';
-import '../../features/receipt/bindings/receipt_binding.dart';
-import '../../features/receipt/views/receipt_view.dart';
 import '../../features/recovery_password/bindings/recovery_password_binding.dart';
 import '../../features/recovery_password/views/recovery_password_view.dart';
 import '../../features/splash/bindings/splash_binding.dart';
@@ -61,7 +63,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -75,9 +77,14 @@ class AppPages {
       binding: NavigationBinding(),
     ),
     GetPage(
-      name: _Paths.RECEIPT,
-      page: () => const ReceiptView(),
-      binding: ReceiptBinding(),
+      name: _Paths.MENU_LIST,
+      page: () => const MenuListView(),
+      binding: MenuListBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => const OrderView(),
+      binding: OrderBinding(),
     ),
   ];
 }

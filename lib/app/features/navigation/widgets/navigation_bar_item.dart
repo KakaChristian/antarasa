@@ -1,7 +1,6 @@
+import 'package:antarasa/app/core/config/assets/app_vectors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../core/config/assets/app_vectors.dart';
 
 class NavigationBarItem extends StatelessWidget {
   final int index;
@@ -27,8 +26,8 @@ class NavigationBarItem extends StatelessWidget {
         break;
       case 1:
         width = 25;
-        icon = AppVectors.receiptIcon;
-        activeIcon = AppVectors.receiptIconActive;
+        icon = AppVectors.orderIcon;
+        activeIcon = AppVectors.orderIconActive;
         break;
       case 2:
         width = 20;
