@@ -69,6 +69,16 @@ class SignupController extends GetxController {
           'user_name': extractFirstName(fullNameController.text.trim()),
         });
 
+        final accessToken = session.accessToken;
+        final refreshToken = session.refreshToken;
+
+        final sessionMap = {
+          "accessToken": accessToken,
+          "refreshToken": refreshToken,
+        };
+
+        await Constants.getBox.write("supabaseSession", sessionMap);
+
         BasicAppSnackbar()
             .show(SnackbarType.success, message: 'Berhasil Membuat Akun');
         Get.offNamed(Routes.NAVIGATION);

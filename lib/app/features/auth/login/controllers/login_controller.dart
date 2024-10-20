@@ -15,6 +15,13 @@ class LoginController extends GetxController {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
+
   Future<void> login() async {
     if (emailController.text.trim().isEmpty &&
         passwordController.text.trim().isEmpty) {
@@ -51,6 +58,16 @@ class LoginController extends GetxController {
       final user = response.user;
 
       if (user != null && session != null) {
+        final accessToken = session.accessToken;
+        final refreshToken = session.refreshToken;
+
+        final sessionMap = {
+          "accessToken": accessToken,
+          "refreshToken": refreshToken,
+        };
+
+        await Constants.getBox.write("supabaseSession", sessionMap);
+
         Get.offNamed(Routes.NAVIGATION);
         BasicAppSnackbar()
             .show(SnackbarType.success, message: 'Login Berhasil');
@@ -63,4 +80,6 @@ class LoginController extends GetxController {
           .show(SnackbarType.error, message: 'Email Atau Password Salah');
     }
   }
+
+  
 }

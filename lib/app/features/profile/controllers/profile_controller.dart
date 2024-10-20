@@ -1,3 +1,4 @@
+import 'package:antarasa/app/common/widgets/snackbar/basic_app_snackbar.dart';
 import 'package:get/get.dart';
 
 import '../../../core/routes/app_pages.dart';
@@ -31,9 +32,9 @@ class ProfileController extends GetxController {
   }
 
   Future<void> signOut() async {
+    await Constants.getBox.remove('supabaseSession');
     await supabase.auth.signOut();
-    if (!isClosed) {
-      return Get.offNamed(Routes.AUTH);
-    }
+    Get.offAllNamed(Routes.AUTH);
+    BasicAppSnackbar().show(SnackbarType.success, message: 'Berhasil Logout');
   }
 }

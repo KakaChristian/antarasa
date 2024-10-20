@@ -68,7 +68,9 @@ class HomeView extends GetView<HomeController> {
                     padding: const EdgeInsets.only(right: 200, left: 25),
                     child: BasicAppButton(
                       height: 40,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.TABLE_BOOKING);
+                      },
                       title: 'Booking Meja',
                       backgroundColor: AppColors.lightGreen,
                       style: const TextStyle(fontSize: 18),

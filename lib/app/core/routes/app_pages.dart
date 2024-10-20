@@ -22,6 +22,8 @@ import '../../features/recovery_password/bindings/recovery_password_binding.dart
 import '../../features/recovery_password/views/recovery_password_view.dart';
 import '../../features/splash/bindings/splash_binding.dart';
 import '../../features/splash/views/splash_view.dart';
+import '../../features/table_booking/bindings/table_booking_binding.dart';
+import '../../features/table_booking/views/table_booking_view.dart';
 
 part 'app_routes.dart';
 
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.ORDER,
       page: () => const OrderView(),
       binding: OrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.TABLE_BOOKING,
+      page: () => const TableBookingView(),
+      binding: TableBookingBinding(),
     ),
   ];
 }

@@ -14,6 +14,7 @@ abstract class Routes {
   static const NAVIGATION = _Paths.NAVIGATION;
   static const MENU_LIST = _Paths.MENU_LIST;
   static const ORDER = _Paths.ORDER;
+  static const TABLE_BOOKING = _Paths.TABLE_BOOKING;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const NAVIGATION = '/navigation';
   static const MENU_LIST = '/menu_list';
   static const ORDER = '/order';
+  static const TABLE_BOOKING = '/table-booking';
 }

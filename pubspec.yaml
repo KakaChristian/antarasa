@@ -52,4 +52,5 @@ flutter:
         - asset: assets/fonts/Inter-Regular.ttf
           weight: 300
         - asset: assets/fonts/Inter-Italic.ttf
+
 # Backend Password : antarasabackend123
