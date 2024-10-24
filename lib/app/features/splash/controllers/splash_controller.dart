@@ -1,4 +1,4 @@
-import 'package:antarasa/app/features/auth/auth/controllers/auth_controller.dart';
+import '../../auth/auth/controllers/auth_controller.dart';
 import 'package:get/get.dart';
 import '../../../core/routes/app_pages.dart';
 

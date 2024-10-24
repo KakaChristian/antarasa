@@ -1,11 +1,11 @@
-import '../../login/controllers/login_controller.dart';
-import '../../signup/controllers/signup_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/config/assets/app_images.dart';
 import '../../../../core/config/themes/app_colors.dart';
+import '../../login/controllers/login_controller.dart';
 import '../../login/views/login_view.dart';
+import '../../signup/controllers/signup_controller.dart';
 import '../../signup/views/signup_view.dart';
 import '../controllers/auth_controller.dart';
 

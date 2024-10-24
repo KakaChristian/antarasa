@@ -1,7 +1,7 @@
-import 'package:antarasa/app/common/widgets/searchbar/basic_app_search_bar.dart';
-import 'package:antarasa/app/core/config/assets/app_images.dart';
-import 'package:antarasa/app/core/config/themes/app_colors.dart';
-import 'package:antarasa/app/features/menu_list/widgets/menu_card.dart';
+import '../../../common/widgets/searchbar/basic_app_search_bar.dart';
+import '../../../core/config/assets/app_images.dart';
+import '../../../core/config/themes/app_colors.dart';
+import '../widgets/menu_card.dart';
 import '../controllers/menu_list_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

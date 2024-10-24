@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../core/config/assets/app_images.dart';
 import '../controllers/splash_controller.dart';
 

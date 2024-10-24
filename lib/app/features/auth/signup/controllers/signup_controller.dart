@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../../../common/widgets/snackbar/basic_app_snackbar.dart';
 import '../../../../core/routes/app_pages.dart';
 import '../../../../core/utils/constant/constant.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SignupController extends GetxController {
   var isPasswordVisible = true.obs;
