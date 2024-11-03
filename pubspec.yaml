@@ -13,6 +13,8 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_profile_picture: ^2.0.0
   flutter_svg: ^2.0.10+1
   get: 4.6.6
@@ -52,5 +54,4 @@ flutter:
         - asset: assets/fonts/Inter-Regular.ttf
           weight: 300
         - asset: assets/fonts/Inter-Italic.ttf
-
 # Backend Password : antarasabackend123
