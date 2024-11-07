@@ -24,7 +24,7 @@ class HomeView extends GetView<HomeController> {
       decoration: const BoxDecoration(
         color: AppColors.lightBackgroundColor,
         image: DecorationImage(
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
           image: AssetImage(AppImages.antarasaBg),
         ),
       ),

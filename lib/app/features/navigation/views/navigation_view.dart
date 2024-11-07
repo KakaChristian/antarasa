@@ -1,6 +1,7 @@
 // import 'package:antarasa/app/core/config/assets/app_vectors.dart';
 import 'package:antarasa/app/features/menu_list/controllers/menu_list_controller.dart';
 import 'package:antarasa/app/features/navigation/widgets/navigation_bar_item.dart';
+import 'package:antarasa/app/features/order/controllers/order_controller.dart';
 import 'package:antarasa/app/features/order/views/order_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -41,10 +42,12 @@ class _NavigationViewState extends State<NavigationView> {
     Get.put(HomeController());
     Get.put(MenuListController());
     Get.put(ProfileController());
+    Get.put(OrderController());
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller.pageController,
         onPageChanged: (index) {
           controller.selectedIndex = index;

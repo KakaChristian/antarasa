@@ -17,7 +17,7 @@ class ProfileView extends GetView<ProfileController> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AppImages.antarasaBg),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
       child: Scaffold(
